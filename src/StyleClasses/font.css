@@ -1,0 +1,40 @@
+@import url(./color.css);
+.bold {
+  font-weight: bold;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.text_m {
+  font-size: 1.1rem;
+}
+
+.text_m2 {
+  font-size: 1.5rem;
+}
+
+.text_l {
+  font-size: 32px;
+}
+
+.text_colorP {
+  color: var(--primaryColor);
+}
+
+.text_colorS {
+  color: var(--secondaryColor);
+}
+
+.text_vs {
+  font-size: 0.5rem;
+}
+
+.text_s {
+  font-size: 0.7rem;
+}
+
+.font_white {
+  color: rgb(255, 236, 236);
+}

@@ -1,0 +1,32 @@
+.m-0 {
+	padding: 0;
+}
+
+.mx-0 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.my-0 {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.mt-0 {
+	padding-top: 0px;
+}
+
+.mr-0 {
+	padding-right: 0px;
+}
+
+.mb-0 {
+	padding-bottom: 0px;
+}
+
+.ml-0 {
+	padding-left: 0px;
+}
+
+.m-1 {
+	margin: 1rem;
+}

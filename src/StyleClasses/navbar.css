@@ -1,0 +1,5 @@
+.navbarItem:hover{
+    background-color: var(--lightGrey);
+	/* border-radius: 2rem; */
+    transform: scale(1.03);
+}

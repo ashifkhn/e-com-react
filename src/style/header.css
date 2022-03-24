@@ -1,0 +1,94 @@
+@import url(../StyleClasses/reset.css);
+@import url(../StyleClasses/main.css);
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  color: #414141;
+  align-items: center;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  margin: 0.8rem;
+  font-size: 1.5rem;
+}
+.search {
+  width: 50%;
+  padding: 1.1em 0.6em;
+  border-radius: 0.2rem;
+  border: none;
+}
+
+.explore {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.shopnow {
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .brand_name {
+    font-size: 1rem;
+  }
+
+  img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .documentation {
+    font-size: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .search {
+    display: none;
+  }
+  .list {
+    display: flex;
+  }
+
+  .shopText {
+    font-size: 1.5rem;
+  }
+
+  .explore {
+    width: 90%;
+  }
+
+  .itemImage {
+    width: 200px;
+    height: 200px;
+  }
+
+  .shopnow {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+  }
+}

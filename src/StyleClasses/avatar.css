@@ -1,0 +1,26 @@
+.avatarTiny {
+	width: 50px;
+	height: 50px;
+}
+
+.avatarSmall {
+	width: 70px;
+	height: 70px;
+}
+
+.avatarMedium {
+	width: 90px;
+	height: 90px;
+}
+.avatarLarge {
+	width: 110px;
+	height: 110px;
+}
+.avatar_huge {
+	width: 150px;
+	height: 150px;
+}
+
+.avatarRound {
+	border-radius: 10rem;
+}
