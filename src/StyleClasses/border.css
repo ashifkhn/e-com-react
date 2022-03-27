@@ -1,0 +1,35 @@
+.br05 {
+  border-radius: 0.5rem;
+}
+
+.br1 {
+  border-radius: 1rem;
+}
+
+.br2 {
+  border-radius: 2rem;
+}
+
+.border_red {
+  border: 2px solid rgb(255, 113, 113);
+}
+
+.border_green {
+  border: 2px solid rgb(19, 140, 27);
+}
+
+.border_black {
+  border: 2px solid black;
+}
+
+.border_black_thick {
+  border: 0.5rem solid black;
+}
+
+.border_gray_thick {
+  border: 0.3rem solid rgb(63, 63, 63);
+}
+
+.border_white {
+  border: 0.3rem solid rgb(255, 251, 243);
+}
