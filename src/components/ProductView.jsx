@@ -1,6 +1,10 @@
 import React from "react";
+import { useContext } from "react";
 import "./Style/productview.css";
-export const ProductView = ({ prod, cart, setCart }) => {
+import { Cart } from "../context/Context";
+
+export const ProductView = ({ prod }) => {
+  const { cart, setCart } = useContext(Cart);
   const addToCartHandler = () => {
     setCart([...cart, prod]);
   };
@@ -10,11 +14,9 @@ export const ProductView = ({ prod, cart, setCart }) => {
   return (
     <div key={prod._id} className="product_sub_container p1">
       <h3>{prod.title} </h3>
-
       <img src={prod.image} alt="" className="product_image" />
-
+      ProductView
       <h5>₹ {prod.price} </h5>
-
       {cart.includes(prod) ? (
         <div className="buttons">
           <button className="btn_secondary2" onClick={removeFromCartHandler}>

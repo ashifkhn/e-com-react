@@ -31,10 +31,6 @@ categories {
   box-shadow: 0 0.2rem 0.5rem 0 rgb(0 0 0 / 50%);
 }
 
-.product_image:hover {
-  transform: scale (1.2);
-}
-
 .buttons {
   width: 100%;
   display: flex;
