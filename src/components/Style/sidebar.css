@@ -1,0 +1,11 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding-left: 2rem;
+}
+
+categories {
+  display: flex;
+  flex-direction: column;
+}
