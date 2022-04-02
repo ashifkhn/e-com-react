@@ -8,6 +8,7 @@ export const ProductView = ({ prod }) => {
   const addToCartHandler = () => {
     setCart([...cart, prod]);
   };
+  // console.log(prod);
   const removeFromCartHandler = () => {
     setCart(cart.filter((cartProduct) => cartProduct._id !== prod._id));
   };
@@ -15,7 +16,6 @@ export const ProductView = ({ prod }) => {
     <div key={prod._id} className="product_sub_container p1">
       <h3>{prod.title} </h3>
       <img src={prod.image} alt="" className="product_image" />
-      ProductView
       <h5>₹ {prod.price} </h5>
       {cart.includes(prod) ? (
         <div className="buttons">
