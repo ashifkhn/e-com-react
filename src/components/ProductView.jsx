@@ -8,7 +8,6 @@ export const ProductView = ({ prod }) => {
   const addToCartHandler = () => {
     setCart([...cart, prod]);
   };
-  // console.log(prod);
   const removeFromCartHandler = () => {
     setCart(cart.filter((cartProduct) => cartProduct._id !== prod._id));
   };
