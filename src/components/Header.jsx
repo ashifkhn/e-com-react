@@ -6,22 +6,25 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <nav className="font_white bg_black">
-      <a className="brand_name font_white bold pointer">d-Gadget Store</a>
-
+      <div className="brand_name font_white bold pointer">
+        <Link to="/" className=".link">
+          d-Gadget Store
+        </Link>
+      </div>
       <div className="search">
         <input type="search" placeholder="search" className="search" />
       </div>
       <div className="list">
-        {/* <Link to="cart">Cart</Link> */}
+        <Link to="wishlist">
+          <i className="fas fa-heart"></i>
+        </Link>
 
-        <a className="p05 font_white bg_black pointer">Login</a>
-        <a to="cart" className="p05 font_white bg_black pointer">
-          <i className="fas fa-2x fa-heart"></i>
-        </a>
-        <a className="p05 font_white bg_black pointer">
-          <i className="fas fa-2x fa-shopping-cart" target="_blank"></i>
-        </a>
-        {/* <Link to="/cart">Cart</Link> */}
+        <Link to="cart">
+          <i className="fas fa-shopping-cart"></i>
+        </Link>
+        <Link to="product">
+          <i className="fas fa-shopping-bag"></i>
+        </Link>
       </div>
     </nav>
   );

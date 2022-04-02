@@ -12,7 +12,15 @@ nav {
 a {
   text-decoration: none;
   margin: 0.8rem;
+  color: #fff;
   font-size: 1.5rem;
+}
+
+.link {
+  color: #fff;
+}
+.link:hover {
+  color: #00f;
 }
 .search {
   width: 50%;

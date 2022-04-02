@@ -6,7 +6,7 @@ import { useState, useContext, useEffect } from "react";
 
 export const CartPage = () => {
   const [total, setTotal] = useState(0);
-  const { cart, setCart } = useContext(Cart);
+  const { cart } = useContext(Cart);
   console.log(cart);
   useEffect(() => {
     setTotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
