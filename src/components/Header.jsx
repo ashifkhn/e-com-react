@@ -1,36 +1,30 @@
 import React from "react";
 import "../StyleClasses/main.css";
-import "../style/header.css";
+import "./Style/header.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <nav className="font_white bg_black">
-      <a className="brand_name font_white bold pointer" href="">
-        d-Gadget Store
-      </a>
-
+      <div className="brand_name font_white bold pointer">
+        <Link to="/" className=".link">
+          d-Gadget Store
+        </Link>
+      </div>
       <div className="search">
         <input type="search" placeholder="search" className="search" />
       </div>
       <div className="list">
-        <a
-          href="./component/auth/login.html"
-          className="p05 font_white bg_black pointer"
-        >
-          Login
-        </a>
-        <a
-          className="p05 font_white bg_black pointer"
-          href="./component/cart/cart.html"
-        >
-          <i className="fas fa-2x fa-heart"></i>
-        </a>
-        <a
-          className="p05 font_white bg_black pointer"
-          href="./component/wishlist/wishlist.html"
-        >
-          <i className="fas fa-2x fa-shopping-cart" target="_blank"></i>
-        </a>
+        <Link to="wishlist">
+          <i className="fas fa-heart"></i>
+        </Link>
+
+        <Link to="cart">
+          <i className="fas fa-shopping-cart"></i>
+        </Link>
+        <Link to="product">
+          <i className="fas fa-shopping-bag"></i>
+        </Link>
       </div>
     </nav>
   );
