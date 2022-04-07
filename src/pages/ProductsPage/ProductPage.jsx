@@ -1,30 +1,47 @@
 import React from "react";
-import { useState, useContext } from "react";
-import { products } from "../../backend/db/products";
 import { Sidebar } from "../../components/Sidebar";
-import { Cart } from "../../context/Context";
+import { CartState } from "../../context/Context";
 import "./productspage.css";
 import { ProductView } from "../../components/ProductView";
-import { Link } from "react-router-dom";
 
 export const ProductPage = () => {
-  const [productArray] = useState(products);
-  const { cart, setCart } = useContext(Cart);
-  console.log(useContext(Cart));
+  const {
+    state: { products },
+    productState: { byStock, byFastDelivery, sort, byRating },
+  } = CartState();
+
+  const transformProducts = () => {
+    let sortedProducts = products;
+    if (sort) {
+      sortedProducts = sortedProducts.sort((a, b) =>
+        sort === "lowToHigh" ? a.price - b.price : b.price - a.price
+      );
+    }
+    if (!byStock) {
+      sortedProducts = sortedProducts.filter((prod) => prod.inStock);
+    }
+
+    if (byFastDelivery) {
+      sortedProducts = sortedProducts.filter((prod) => prod.fastDelivery);
+    }
+
+    if (byRating) {
+      sortedProducts = sortedProducts.filter(
+        (prod) => prod.ratings >= byRating
+      );
+    }
+    return sortedProducts;
+  };
+
+  // console.log(sortedProducts);
   return (
     <div className="container">
       <aside className="sidebar">
         <Sidebar />
       </aside>
       <main className="product_container">
-        <Link to="/product">product</Link>
-        <Link to="/cart">Cart</Link>
-        {productArray.map((prod) => {
-          return (
-            <div key={prod._id}>
-              <ProductView prod={prod} cart={cart} setCart={setCart} />
-            </div>
-          );
+        {transformProducts().map((prod) => {
+          return <ProductView prod={prod} key={prod._id} />;
         })}
       </main>
     </div>
