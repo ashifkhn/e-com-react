@@ -21,6 +21,7 @@ categories {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  /* position: absolute; */
 }
 
 .product_image {
@@ -35,21 +36,5 @@ categories {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 2rem;
 }
-/* 
-.container {
-  display: flex;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  padding-left: 2.5rem;
-}
-
-.main {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-} */
