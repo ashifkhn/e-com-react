@@ -12,6 +12,23 @@ export const cartReducer = (state, action) => {
   }
 };
 
+export const wishlistReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_TO_WISHLIST":
+      return {
+        ...state,
+        wishlist: [...state.wishlist, { ...action.payload, qty: 1 }],
+      };
+    case "REMOVE_FROM_WISHLIST":
+      return {
+        ...state,
+        wishlist: state.wishlist.filter((c) => c._id !== action.payload._id),
+      };
+    default:
+      return state;
+  }
+};
+
 export const productReducer = (state, action) => {
   switch (action.type) {
     case "SORT_BY_PRICE":

@@ -16,7 +16,8 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/whilist" element={<WishListPAge />} />
+          <Route path="/wishlist" element={<WishListPAge />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </div>

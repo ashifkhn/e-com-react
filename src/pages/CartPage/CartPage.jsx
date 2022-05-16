@@ -1,4 +1,5 @@
 import React from "react";
+import "./cartpage.css";
 import { Link } from "react-router-dom";
 import { Cart } from "../../context/Context";
 import { ProductView } from "../../components/ProductView";
@@ -11,7 +12,6 @@ export const CartPage = () => {
     state: { cart },
     dispatch,
   } = CartState();
-  console.log(cart);
   useEffect(() => {
     setTotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
   }, [cart]);
@@ -24,7 +24,9 @@ export const CartPage = () => {
           return <ProductView prod={prod} key={prod._id} />;
         })}
       </div>
-      <h1>Total Amount: {total}</h1>
+      <div className="amount">
+        <h1>Total Amount: {total}</h1>
+      </div>
     </div>
   );
 };

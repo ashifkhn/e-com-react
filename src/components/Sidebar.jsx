@@ -8,8 +8,6 @@ export const Sidebar = () => {
     productState: { byStock, byFastDelivery, sort, byRating },
   } = CartState();
 
-  // console.log(byStock, sort, byRating, byFastDelivery);
-
   return (
     <div className=".sidebar">
       <h3 className="p1">Filters</h3>
