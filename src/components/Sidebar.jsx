@@ -1,5 +1,5 @@
 import React from "react";
-import { CartState } from "../context/Context";
+import { CartState } from "../context/CartContext";
 import "./Style/sidebar.css";
 
 export const Sidebar = () => {

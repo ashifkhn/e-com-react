@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductView } from "../../components/ProductView";
-import { CartState } from "../../context/Context";
+import { CartState } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 export const WishListPAge = () => {

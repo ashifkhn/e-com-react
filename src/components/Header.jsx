@@ -2,16 +2,17 @@ import React from "react";
 import "../StyleClasses/main.css";
 import "./Style/header.css";
 import { Link } from "react-router-dom";
-import { CartState } from "../context/Context";
-import { useState } from "react/cjs/react.development";
+import { CartState } from "../context/CartContext";
+// import { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 
 export default function Header() {
   const {
     state: { cart },
     wishListState: { wishlist },
   } = CartState();
-
-  const [login, setLogin] = useState(false);
+  const { login, setLogin } = useAuth();
+  // const [login, setLogin] = useState(true);
 
   return (
     <nav className="font_white bg_black">
@@ -33,13 +34,10 @@ export default function Header() {
           <i className="fas fa-shopping-cart"></i>
           {cart.length}
         </Link>
-        <Link to="product">
-          <i className="fas fa-shopping-bag"></i>
-        </Link>
         <Link to="login">
           <i class="fas fa-user"></i>
         </Link>
-        {login ? <div>login</div> : <div>logout</div>}
+        {login ? <button>Logout</button> : <button>Login</button>}
       </div>
     </nav>
   );

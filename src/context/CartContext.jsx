@@ -7,9 +7,8 @@ import {
   wishlistReducer,
 } from "../reducer/Reducer";
 
-export const Cart = createContext();
-
-const Context = ({ children }) => {
+export const CartContext = createContext();
+const CartContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, {
     products: products,
     cart: [],
@@ -28,7 +27,7 @@ const Context = ({ children }) => {
   });
 
   return (
-    <Cart.Provider
+    <CartContext.Provider
       value={{
         state,
         dispatch,
@@ -39,12 +38,12 @@ const Context = ({ children }) => {
       }}
     >
       {children}
-    </Cart.Provider>
+    </CartContext.Provider>
   );
 };
 
 export const CartState = () => {
-  return useContext(Cart);
+  return useContext(CartContext);
 };
 
-export default Context;
+export default CartContextProvider;

@@ -1,8 +1,14 @@
 import React from "react";
 import "./Style/productview.css";
-import { CartState } from "../context/Context";
+import { CartState } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export const ProductView = ({ prod }) => {
+  // const { login } = useAuth();
+  // const navigate = useNavigate();
+  // const loginHandler = () => {};
+
   const {
     state: { cart },
     dispatch,
@@ -10,7 +16,6 @@ export const ProductView = ({ prod }) => {
     wishListDispatch,
   } = CartState();
 
-  // console.log(cart);
   console.log(wishlist);
   return (
     <div className="product_sub_container p1">

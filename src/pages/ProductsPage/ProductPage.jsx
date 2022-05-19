@@ -1,6 +1,6 @@
 import React from "react";
 import { Sidebar } from "../../components/Sidebar";
-import { CartState } from "../../context/Context";
+import { CartState } from "../../context/CartContext";
 import "./productspage.css";
 import { ProductView } from "../../components/ProductView";
 

@@ -1,10 +1,10 @@
 import React from "react";
 import "./cartpage.css";
 import { Link } from "react-router-dom";
-import { Cart } from "../../context/Context";
+import { CartContext } from "../../context/CartContext";
 import { ProductView } from "../../components/ProductView";
-import { useState, useContext, useEffect } from "react";
-import { CartState } from "../../context/Context";
+import { useState, useEffect } from "react";
+import { CartState } from "../../context/CartContext";
 
 export const CartPage = () => {
   const [total, setTotal] = useState(0);
