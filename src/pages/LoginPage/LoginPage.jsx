@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./loginpage.css";
 
 export const LoginPage = () => {
+  const { login, setLogin } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const userNameHandler = (e) => {
+    setUsername(e.target.value);
+  };
+  const passwordHandler = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const clickHandler = () => {
+    var tokenData = {
+      username: username,
+      password: password,
+    };
+    var jsonData = JSON.stringify(tokenData);
+    localStorage.setItem("token", jsonData);
+    setLogin(true);
+    navigate("/product");
+  };
+
   return (
     <div className="container">
       <div className="login_container p1 border_gray_thick">
@@ -12,6 +37,8 @@ export const LoginPage = () => {
             name="login"
             type="text"
             placeholder="Username or email"
+            value={username}
+            onChange={userNameHandler}
           />
         </div>
         <div>
@@ -21,9 +48,13 @@ export const LoginPage = () => {
             name="login"
             type="text"
             placeholder="password"
+            value={password}
+            onChange={passwordHandler}
           />
         </div>
-        <button className="btn_primary2">Login</button>
+        <button className="btn_primary2" onClick={clickHandler}>
+          Login
+        </button>
       </div>
     </div>
   );

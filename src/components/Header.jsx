@@ -12,7 +12,10 @@ export default function Header() {
     wishListState: { wishlist },
   } = CartState();
   const { login, setLogin } = useAuth();
-  // const [login, setLogin] = useState(true);
+
+  const logoutHandler = () => {
+    setLogin(false);
+  };
 
   return (
     <nav className="font_white bg_black">
@@ -34,10 +37,16 @@ export default function Header() {
           <i className="fas fa-shopping-cart"></i>
           {cart.length}
         </Link>
-        <Link to="login">
-          <i class="fas fa-user"></i>
-        </Link>
-        {login ? <button>Logout</button> : <button>Login</button>}
+
+        {login ? (
+          <button className="btn_primary2" onClick={logoutHandler}>
+            Logout
+          </button>
+        ) : (
+          <Link to="login">
+            <i className="fas fa-user"></i>
+          </Link>
+        )}
       </div>
     </nav>
   );

@@ -5,18 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 export const ProductView = ({ prod }) => {
-  // const { login } = useAuth();
-  // const navigate = useNavigate();
-  // const loginHandler = () => {};
-
+  const { login } = useAuth();
+  const navigate = useNavigate();
   const {
     state: { cart },
     dispatch,
     wishListState: { wishlist },
     wishListDispatch,
   } = CartState();
-
-  console.log(wishlist);
   return (
     <div className="product_sub_container p1">
       <h3>{prod.title} </h3>
@@ -37,12 +33,16 @@ export const ProductView = ({ prod }) => {
         ) : (
           <div
             className="wishlist_icon"
-            onClick={() =>
-              wishListDispatch({
-                type: "ADD_TO_WISHLIST",
-                payload: prod,
-              })
-            }
+            onClick={() => {
+              if (login) {
+                wishListDispatch({
+                  type: "ADD_TO_WISHLIST",
+                  payload: prod,
+                });
+              } else {
+                navigate("/login");
+              }
+            }}
           >
             <i className=" fas fa-heart fa-lg"></i>
           </div>
@@ -67,12 +67,16 @@ export const ProductView = ({ prod }) => {
         <div className="buttons">
           <button
             className="btn_primary2"
-            onClick={() =>
-              dispatch({
-                type: "ADD_TO_CART",
-                payload: prod,
-              })
-            }
+            onClick={() => {
+              if (login) {
+                dispatch({
+                  type: "ADD_TO_CART",
+                  payload: prod,
+                });
+              } else {
+                navigate("/login");
+              }
+            }}
           >
             Add to Cart
           </button>
