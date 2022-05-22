@@ -26,7 +26,6 @@ export const LoginPage = () => {
     setLogin(true);
     navigate("/product");
   };
-
   return (
     <div className="container">
       <div className="login_container p1 border_gray_thick">
