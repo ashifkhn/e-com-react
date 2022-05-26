@@ -10,11 +10,19 @@ export default function Header() {
   const {
     state: { cart },
     wishListState: { wishlist },
+    dispatch,
+    wishListDispatch,
   } = CartState();
   const { login, setLogin } = useAuth();
 
   const logoutHandler = () => {
     setLogin(false);
+    dispatch({
+      type: "CLEAR_CART_AND_WISHLIST",
+      payload: [],
+    });
+
+    // navigate("/");
   };
 
   return (

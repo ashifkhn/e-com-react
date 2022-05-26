@@ -8,6 +8,7 @@ import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { WishListPAge } from "./pages/WishListPage/WishListPAge";
 import { useAuth } from "./context/AuthContext";
 import { RequiresAuth } from "./components/Auth/RequiresAuth.jsx"
+import Mockman from "mockman-js"
 function App() {
   const { login } = useAuth()
   return (
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="mock" element={<Mockman />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/login" element={<LoginPage />} />

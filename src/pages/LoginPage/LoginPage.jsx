@@ -5,6 +5,7 @@ import "./loginpage.css";
 
 export const LoginPage = () => {
   const { login, setLogin } = useAuth();
+  const { dispatch } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [username, setUsername] = useState("");
@@ -17,14 +18,8 @@ export const LoginPage = () => {
   };
 
   const clickHandler = () => {
-    var tokenData = {
-      username: username,
-      password: password,
-    };
-    var jsonData = JSON.stringify(tokenData);
-    localStorage.setItem("token", jsonData);
     setLogin(true);
-    navigate("/product");
+    navigate("/");
   };
   return (
     <div className="container">

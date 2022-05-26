@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Sidebar } from "../../components/Sidebar";
 import { CartState } from "../../context/CartContext";
 import "./productspage.css";
 import { ProductView } from "../../components/ProductView";
+import axios from "axios";
+import { useState } from "react/cjs/react.development";
 
 export const ProductPage = () => {
+  const [datafromApi, setdDataFromApi] = useState();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const resp = await axios.get("api/products");
+        setdDataFromApi(resp.data);
+      } catch (err) {
+        alert(`Error from Server , ${err}`);
+      }
+    })();
+  }, []);
+
   const {
     state: { products },
     productState: { byStock, byFastDelivery, sort, byRating },
@@ -33,7 +48,7 @@ export const ProductPage = () => {
     return sortedProducts;
   };
 
-  // console.log(sortedProducts);
+  // console.log(datafromApi);
   return (
     <div className="container">
       <aside className="sidebar">

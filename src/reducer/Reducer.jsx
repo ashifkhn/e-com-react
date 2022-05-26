@@ -7,6 +7,13 @@ export const cartReducer = (state, action) => {
         ...state,
         cart: state.cart.filter((c) => c._id !== action.payload._id),
       };
+
+    case "CLEAR_CART_AND_WISHLIST":
+      return {
+        ...state,
+        wishlist: [],
+        cart: [],
+      };
     default:
       return state;
   }
@@ -24,6 +31,7 @@ export const wishlistReducer = (state, action) => {
         ...state,
         wishlist: state.wishlist.filter((c) => c._id !== action.payload._id),
       };
+
     default:
       return state;
   }
