@@ -3,16 +3,19 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import Context from "./context/Context.jsx"
+import CartContextProvider from "./context/CartContext.jsx"
+import { AuthContextProvider } from "./context/AuthContext";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Context>
-      <App />
-    </Context>
+    <CartContextProvider>
+      <AuthContextProvider>
+        <App />
+      </AuthContextProvider>
+    </CartContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

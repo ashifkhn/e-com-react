@@ -7,6 +7,31 @@ export const cartReducer = (state, action) => {
         ...state,
         cart: state.cart.filter((c) => c._id !== action.payload._id),
       };
+
+    case "CLEAR_CART_AND_WISHLIST":
+      return {
+        ...state,
+        wishlist: [],
+        cart: [],
+      };
+    default:
+      return state;
+  }
+};
+
+export const wishlistReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_TO_WISHLIST":
+      return {
+        ...state,
+        wishlist: [...state.wishlist, { ...action.payload, qty: 1 }],
+      };
+    case "REMOVE_FROM_WISHLIST":
+      return {
+        ...state,
+        wishlist: state.wishlist.filter((c) => c._id !== action.payload._id),
+      };
+
     default:
       return state;
   }

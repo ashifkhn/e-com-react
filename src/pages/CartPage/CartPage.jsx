@@ -1,9 +1,10 @@
 import React from "react";
+import "./cartpage.css";
 import { Link } from "react-router-dom";
-import { Cart } from "../../context/Context";
+import { CartContext } from "../../context/CartContext";
 import { ProductView } from "../../components/ProductView";
-import { useState, useContext, useEffect } from "react";
-import { CartState } from "../../context/Context";
+import { useState, useEffect } from "react";
+import { CartState } from "../../context/CartContext";
 
 export const CartPage = () => {
   const [total, setTotal] = useState(0);
@@ -11,7 +12,6 @@ export const CartPage = () => {
     state: { cart },
     dispatch,
   } = CartState();
-  console.log(cart);
   useEffect(() => {
     setTotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
   }, [cart]);
@@ -24,7 +24,9 @@ export const CartPage = () => {
           return <ProductView prod={prod} key={prod._id} />;
         })}
       </div>
-      <h1>Total Amount: {total}</h1>
+      <div className="amount">
+        <h1>Total Amount: {total}</h1>
+      </div>
     </div>
   );
 };
