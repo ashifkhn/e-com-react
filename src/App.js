@@ -9,6 +9,8 @@ import { WishListPAge } from "./pages/WishListPage/WishListPAge";
 import { useAuth } from "./context/AuthContext";
 import { RequiresAuth } from "./components/Auth/RequiresAuth.jsx"
 import Mockman from "mockman-js"
+import { SignUpPage } from "./pages/SignUpPage/SignUpPage";
+
 function App() {
   const { login } = useAuth()
   return (
@@ -20,7 +22,7 @@ function App() {
           <Route path="mock" element={<Mockman />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
           <Route
             path="/wishlist"
             element={

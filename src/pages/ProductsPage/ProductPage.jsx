@@ -48,7 +48,6 @@ export const ProductPage = () => {
     return sortedProducts;
   };
 
-  // console.log(datafromApi);
   return (
     <div className="container">
       <aside className="sidebar">
