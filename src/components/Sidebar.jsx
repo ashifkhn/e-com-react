@@ -11,13 +11,7 @@ export const Sidebar = () => {
   return (
     <div className=".sidebar">
       <h3 className="p1">Filters</h3>
-      <div>
-        {/* <h5>Price</h5> */}
-        {/* <div>
-          <input type="range" className="price-range" min={0} max={20000} />
-          <label htmlFor="cowbell">Price</label>
-        </div> */}
-      </div>
+      <div></div>
       <div>
         <h5>Sort by</h5>
         <div>

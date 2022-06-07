@@ -16,16 +16,16 @@ export const CartPage = () => {
     setTotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
   }, [cart]);
   return (
-    <div>
-      <Link to="/product">product</Link>
-      <Link to="/cart">Cart</Link>
+    <div className="cart_page_container">
       <div className="product_container">
         {cart.map((prod) => {
           return <ProductView prod={prod} key={prod._id} />;
         })}
       </div>
+
       <div className="amount">
-        <h1>Total Amount: {total}</h1>
+        <h3>N0. of Items: {cart.length}</h3>
+        <h3>Total Amount: {total}</h3>
       </div>
     </div>
   );

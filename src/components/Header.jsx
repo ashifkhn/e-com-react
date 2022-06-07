@@ -3,7 +3,6 @@ import "../StyleClasses/main.css";
 import "./Style/header.css";
 import { Link } from "react-router-dom";
 import { CartState } from "../context/CartContext";
-// import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 
 export default function Header() {
@@ -11,18 +10,14 @@ export default function Header() {
     state: { cart },
     wishListState: { wishlist },
     dispatch,
-    wishListDispatch,
   } = CartState();
   const { login, setLogin } = useAuth();
 
   const logoutHandler = () => {
     setLogin(false);
     dispatch({
-      type: "CLEAR_CART_AND_WISHLIST",
-      payload: [],
+      type: "CLEAR_CART_AND_WISHLIST", // import { useState } from "react";
     });
-
-    // navigate("/");
   };
 
   return (

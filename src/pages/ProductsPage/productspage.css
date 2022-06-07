@@ -16,12 +16,10 @@ categories {
   height: 100%;
   width: 100%;
   display: flex;
-  padding-left: 2.5rem;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  /* position: absolute; */
 }
 
 .product_image {
